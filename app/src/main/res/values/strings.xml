@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Firebase Auth MVVM</string>
+    <string name="app_name">Firebase Imeshke</string>
     <string name="default_notification_channel_id">com.imeshke.firebaselogin</string>
     <string name="handle_notification_now">You have a unread notification</string>
     <string name="logout">Logout</string>
