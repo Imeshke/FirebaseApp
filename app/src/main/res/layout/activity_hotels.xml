@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".ui.home.HotelsActivity">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{viewmodel.user.email}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+             />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="22dp"
+            android:background="@color/colorPrimary"
+            android:layout_below="@id/textViewEmail"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:onClick="@{(v) -> viewmodel.logout(v)}"
+            android:text="@string/logout" />
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hotelsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_below="@id/btnLogout"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.imeshke.firebaselogin.ui.main.HotelsViewModel" />
+    </data>
+
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Firebase Auth MVVM</string>
+    <string name="default_notification_channel_id">com.imeshke.firebaselogin</string>
+    <string name="handle_notification_now">You have a unread notification</string>
+    <string name="logout">Logout</string>
+    <string name="SignIn_header">Login</string>
+    <string name="details_header">Details</string>
+    <string name="map_header">Location</string>
+    <string name="SignUp_header">Enroll</string>
+    <string name="Listview_header">List View</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLoginBg"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        tools:context=".ui.auth.SignupActivity">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/signupLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/header_img"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cat_mask"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
+
+            <RelativeLayout
+                    android:layout_below="@+id/header_img"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:labelFor="@id/text_email"
+                        android:text="@string/email" />
+                    <EditText
+                        android:id="@+id/text_email"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:drawablePadding="10dp"
+                        android:hint="imeshke.jaya@hotmail.com"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:text="@={viewmodel.email}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:labelFor="@id/edit_text_password"
+                        android:text="@string/password" />
+
+
+                    <EditText
+                        android:id="@+id/edit_text_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_lock"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={viewmodel.password}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:labelFor="@id/edit_text_password"
+                        android:text="@string/confirm_password"  />
+
+
+                    <EditText
+                        android:id="@+id/edit_text_confirm_password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_lock"
+                        android:drawablePadding="10dp"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:text="@={viewmodel.confirm}" />
+
+
+
+                    <Button
+                        android:id="@+id/button_sign_up"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="22dp"
+                        android:background="@color/colorPrimary"
+                        android:onClick="@{() -> viewmodel.signup()}"
+                        android:text="@string/SignUp_header"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/text_view_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="@{(v) -> viewmodel.goToLogin(v)}"
+                        android:text="Already have an account.\nLogin Here"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.imeshke.firebaselogin.ui.auth.AuthViewModel" />
+    </data>
+
+</layout>
